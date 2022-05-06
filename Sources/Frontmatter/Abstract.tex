@@ -1,0 +1,88 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Modèle pour la 4ème de couverture des thèses préparées à l'Institut Polytechnique de Paris, basé sur le modèle produit par Nikolas STOTT 
+%%% / Template for back cover of thesis made at Institut Polytechnique de Paris, based on the template made by Nikolas STOTT
+%%% Mis à jour par Aurélien ARNOUX (École polytechnique)/ Updated by Aurélien ARNOUX (École polytechnique)
+%%% Nouvelle mise à jour par Jan SCHNEIDER (CPHT, École polytechnique)/ Updated by Jan SCHNEIDER (CPHT, École polytechnique)
+%%% ATTENTION Ces informations doivent tenir sur une seule page une fois compilées /
+%%% /WARNING These informations must contain in no more than one page once compiled
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Version du 5 mai 2022 : utilisation de .pdf au lieu de .png pour les logos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\thispagestyle{empty}
+
+% \begin{center}
+%   \textsc{Abstract}
+% \end{center}
+
+% \vspace{1cm}
+%
+% \noindent
+%
+
+\newgeometry{top=15mm,bottom=20mm,left=15mm,right=15mm}
+
+
+\begin{minipage}{60mm}
+  \includegraphics[width=\textwidth]{graphics/frontmatter/ed-ip-paris.pdf}
+\end{minipage}
+
+\vspace*{1cm}
+
+%%%Titre de la thèse en anglais / Thesis title in english
+\begin{center}
+\fcolorbox{black}{white}{\parbox{160mm}{
+  \textbf{Title:} \PhDTitleEN 
+
+  \medskip
+
+  %%%Mots clés en anglais, séprarés par des ; / Keywords in english, separated by ;
+  \textbf{Keywords:}  \keywordsEN %%3 à 6 mots clés%%
+  \vspace{-2mm}
+  \begin{multicols}{2}
+    
+  %%% Résumé en anglais / abstract in english
+  \textbf{Abstract:} 
+  \abstractEN
+  \end{multicols}
+}}
+\end{center}
+
+\vspace*{5mm}
+
+%%%Titre de la thèse en français / Thesis title in french
+\begin{center}
+  \fcolorbox{black}{white}{\parbox{160mm}{
+    \textbf{Titre:} \PhDTitleFR 
+    \medskip
+    
+    %%%Mots clés en français, séprarés par des ; / Keywords in french, separated by ;
+    \textbf{Mots clés:} \keywordsFR 
+    \vspace{-2mm}
+    
+    %%% Résumé en français / abstract in french
+    \begin{multicols}{2}
+    \textbf{Résumé:} 
+    \abstractFR 
+    \end{multicols}
+  }}
+\end{center}
+  
+% \vspace*{0mm}
+\vfill
+
+
+\begin{minipage}[b][][l]{60mm}
+  \textbf{Institut Polytechnique de Paris}\\
+  91120 Palaiseau, Frances
+\end{minipage}
+% 
+\hfill
+% 
+\begin{minipage}[b][][r]{22mm}
+  \includegraphics[width=\textwidth]{graphics/frontmatter/ip-paris-petit.pdf}
+\end{minipage}
+
+\restoregeometry

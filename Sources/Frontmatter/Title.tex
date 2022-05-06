@@ -1,0 +1,40 @@
+\newgeometry{margin=3cm}
+\begin{titlepage}
+  \vspace*{3cm}
+  \makeatletter
+  \begin{center}
+    \begin{huge}
+      \@title
+    \end{huge}\\[1.15em]
+    %
+    \ifdefined \r@subtitle
+    \begin{Large}
+      \@subtitle
+    \end{Large}\\[0.6em]
+    \fi
+    %
+    \emph{by}\\[0.6em]
+    \@author
+    %
+    % \vfill
+    % \begin{center}
+    %   \includegraphics[height=10cm]{graphics/frontmatter/X_IPParis_blue.pdf}
+    % \end{center}
+    %
+    \vfill
+    
+    {\large Thèse de doctorat de l'Institut Polytechnique de Paris\\
+    préparée au Centre de Physique Théorique\\
+    à\\
+    \textsc{l'École Polytechnique}}
+   
+  \end{center}
+  \makeatother
+\end{titlepage}
+
+\restoregeometry
+
+\newpage
+\null
+\thispagestyle{empty}
+\newpage

@@ -1,0 +1,117 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Modèle pour la 1ère de couverture des thèses préparées à l'Institut Polytechnique de Paris, basé sur le modèle produit par Guillaume BRIGOT / Template for front cover of thesis made at Institut Polytechnique de Paris, based on the template made by Guillaume BRIGOT
+%%% Mis à jour par Aurélien ARNOUX (École polytechnique)/ Updated by Aurélien ARNOUX (École polytechnique)
+%%% Nouvelle mise à jour par Jan SCHNEIDER (CPHT, École polytechnique)/ Further updated by Jan SCHNEIDER (CPHT, École polytechnique)
+%%% Les instructions concernant chaque donnée à remplir sont données en bloc de commentaire / Rules to fill this file are given in comment blocks
+%%% ATTENTION Ces informations doivent tenir sur une seule page une fois compilées / WARNING These informations must contain in no more than one page once compiled
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Mise en page / Page layout
+%%% NE RIEN MODIFIER EXCEPTÉ SI BESOIN / DO NOT MODIFY EXCEPT IF NEEDED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newgeometry{margin=1cm}
+
+
+
+\begingroup\label{cover}
+% \mycoverfont
+\thispagestyle{empty}
+
+% \color{black} 
+\hfill \vfill \tiny \ecodocnum
+\begin{textblock}{5}(0,0)
+	\textblockcolour{black}
+    \centering
+    \vspace{8mm}
+	\includegraphics[width=5cm]{graphics/frontmatter/ip-paris-white.pdf}
+	\vspace{300mm}
+\end{textblock}
+
+
+\begin{textblock}{1}(0.6,3)
+	\Large{\rotatebox{90}{\textcolor{white}{\textsf{\textbf{NNT~:~\NNT}}}}}
+\end{textblock}
+
+\begin{textblock}{1}(1,7)
+	\rotatebox{90}{\textcolor{white}{{
+		\fontsize{44pt}{44pt}\selectfont 
+		% \mycoverthesefont
+		\textsf{\textbf{Thèse de doctorat}}
+		}}
+	}
+\end{textblock}        
+
+
+\textblockcolour{white}
+\begin{textblock}{1}(\hpostt,\vpostt)
+	\textblockcolour{white}
+	\logoEtt 
+\end{textblock}
+
+\begin{textblock}{1}(\hpos,\vpos)
+	\textblockcolour{white}
+	\logoEt
+\end{textblock}
+
+%\vspace{6cm}
+%% Texte
+\begin{textblock}{10}(5.5,3.5)
+	\textblockcolour{white}
+	
+	% \color{black}
+	%\begin{center}  
+	\begin{flushright}
+		\huge{\PhDTitleEN} \\ \bigskip %% Titre de la thèse 
+		\vfill
+		% \color{black} %% Couleur noire du reste du texte
+		\normalsize {Thèse de doctorat de l'Institut Polytechnique de Paris} \\
+		préparée à \PhDworkingplace \\ \bigskip
+		\vfill
+		École doctorale n\(^{\circ}\)\ecodocnum~\ecodoctitle~(\ecodocacro)  \\
+		
+		\small{Spécialité de doctorat: \PhDspeciality} \\ \bigskip %% Spécialité 
+		\vfill  
+		\footnotesize{Thèse présentée et soutenue à \defenseplace, le \defensedate, par} \\ \bigskip
+		\vfill
+		\Large{\textbf{\textsc{\PhDname}}} %% Nom du docteur
+		\vfill
+		%\bigskip
+	\end{flushright}
+	
+	%\end{center}
+	% \color{black}
+	%% Jury
+	\begin{flushleft}
+		
+		\small Composition du Jury~:
+	\end{flushleft}
+	%% Members of the jury
+
+	\small
+	%\begin{center}
+	\newcolumntype{L}[1]{>{\raggedright\let\newline \\ \arraybackslash\hspace{0pt}}m{#1}}
+	\newcolumntype{R}[1]{>{\raggedleft\let\newline \\ \arraybackslash\hspace{0pt}}lm{#1}}
+	
+	
+    %% Update if members have been added or removed
+	\begin{flushleft}\label{jury}
+	\begin{tabular}{@{} L{9cm} R{4cm}}
+		\jurynameA  \\ \juryadressA & \juryroleA \\[1em]
+		\jurynameB  \\ \juryadressB & \juryroleB \\[1em]
+		\jurynameC  \\ \juryadressC & \juryroleC \\[1em]
+		\jurynameD  \\ \juryadressD & \juryroleD \\[1em]
+		\jurynameE  \\ \juryadressE & \juryroleE \\[1em]
+		\jurynameF  \\ \juryadressF & \juryroleF \\[1em]
+		\jurynameG  \\ \juryadressG & \juryroleG \\[5pt]
+		\jurynameH  \\ \juryadressH & \juryroleH \\[5pt]
+	\end{tabular} 
+	\end{flushleft}   
+	%\end{center}
+\end{textblock}
+\endgroup
+\clearpage
+
+\restoregeometry

@@ -1,4 +1,5 @@
-\documentclass{mimosis}
+% !TEX root = Thesis.tex
+\documentclass[a4paper,11pt]{mimosis}
 
 \usepackage{metalogo}
 
@@ -12,7 +13,47 @@
 
 % This ensures that I am able to typeset bold font in table while still aligning the numbers
 % correctly.
+
 \usepackage{etoolbox}
+\usepackage{physics}
+
+
+% \ohead{\rightmark}  % section-names in the header
+% \ohead{\leftmark}   % chapter-names in the header
+
+% \usepackage{afterpage} %% for page specific geometry
+
+%
+% Make KOMA script happy?
+% fore more details see documentatio of KOMA Script options on margins and textarea at
+% mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf
+% \KOMAoptions{DIV=12}
+% \KOMAoptions{BCOR=12mm}
+
+
+\usepackage{multicol}
+\setlength{\columnseprule}{0pt}
+\setlength\columnsep{10pt}
+
+\usepackage[absolute,overlay]{textpos}
+
+\input{Sources/configuration.tex}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% GEOMETRY
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{geometry}
+\geometry{
+	inner=25mm,
+	top=25mm,
+	outer=30mm,
+	bottom=25mm
+}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Hyperlinks & bookmarks
@@ -20,13 +61,17 @@
 
 \usepackage[%
   colorlinks = true,
-  citecolor  = RoyalBlue,
+  citecolor  = BrickRed,
   linkcolor  = RoyalBlue,
   urlcolor   = RoyalBlue,
   unicode,
+  pdftitle={\PhDTitleEN},
+  pdfauthor={\PhDname},
+  pdfsubject={Manuscrit de thèse de doctorat},
   ]{hyperref}
 
 \usepackage{bookmark}
+\usepackage[capitalise]{cleveref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
@@ -39,18 +84,27 @@
 \usepackage[%
   autocite     = plain,
   backend      = biber,
-  doi          = true,
-  url          = true,
+  % doi          = true,
+  eprint       = true,
+  url          = false,
   giveninits   = true,
   hyperref     = true,
   maxbibnames  = 99,
   maxcitenames = 99,
-  sortcites    = true,
-  style        = numeric,
+  sorting      = none,
+  % sortcites    = true,
+  % sortsets     = true,
+  style        = phys,
+  % citestyle    = authoryear-comp,
+  % bibstyle     = phys,
+  backref,%
+  natbib       = true,
   ]{biblatex}
 
 \input{bibliography-mimosis}
 \addbibresource{Thesis.bib}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Fonts
@@ -58,17 +112,58 @@
 
 \ifxetexorluatex
   \usepackage{unicode-math}
-  \setmainfont{EB Garamond}
-  \setmathfont{Garamond Math}
-  \setmonofont[Scale=MatchLowercase]{Source Code Pro}
+  \usepackage{fontspec}
+
+  % \setmainfont{Garamond}
+  % \setmainfont{EB Garamond}
+  % \setmathfont{Garamond Math}
+
+  \setmathfont{STIXTwoMath-Regular}[
+  Extension={.otf},
+  Path=./fonts/STIX2/,
+  Scale=1]
+
+  \setmainfont{STIXTwoText}[
+    Extension={.otf},
+    Path=./fonts/STIX2/,
+    UprightFont={*-Regular},
+    BoldFont={*-Bold},
+    ItalicFont={*-Italic},
+    BoldItalicFont={*-BoldItalic}
+  ]
+
+  \setmonofont[Scale=MatchLowercase]{Fira Mono}
+  
+
+  \setsansfont{texgyreheros}[
+    Extension={.otf},
+    Path=./fonts/Heros/,
+    UprightFont={*-regular},
+    BoldFont={*-bold},
+    ItalicFont={*-italic},
+    BoldItalicFont={*-bolditalic}
+  ]
+
+  % \setfontfamily\mycoverthesefont{Libre Franklin}
+  % \setfontfamily\mycoverthesefont{IBM Plex Sans}
+  % \setfontfamily\mycoverfont{STIXTwoText}
+
 \else
-  \usepackage[lf]{ebgaramond}
+  % \usepackage[lf]{ebgaramond}
+  \usepackage{stix2}
+  % \usepackage[garamondx,cmbraces]{newtxmath}
   \usepackage[oldstyle,scale=0.7]{sourcecodepro}
   \singlespacing
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{mathtools}
 \fi
 
-\newacronym[description={Principal component analysis}]{PCA}{PCA}{principal component analysis}
-\newacronym                                            {SNF}{SNF}{Smith normal form}
+
+%%%%% Uncomment for Glossary anc acronyms
+
+\newacronym[description={Singular value decomposition}]{SVD}{SVD}{singular value decomposition}
+\newacronym{SNF}{SNF}{Smith normal form}
 \newacronym[description={Topological data analysis}]   {TDA}{TDA}{topological data analysis}
 
 \newglossaryentry{LaTeX}{%
@@ -78,7 +173,7 @@
 }
 
 \newglossaryentry{Real numbers}{%
-  name        = {$\real$},
+  name        = {\(\real\)},
   description = {The set of real numbers},
   sort        = {Real numbers},
 }
@@ -104,24 +199,29 @@
 
 \renewcommand{\th}{\textsuperscript{\textup{th}}\xspace}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Incipit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{\texttt{latex-mimosis}}
-\subtitle{A minimal, modern \LaTeX{} package for typesetting your thesis}
-\author{Bastian Rieck}
+\title{\PhDTitleEN}
+% \subtitle{}
+\author{\PhDname}
 
 \begin{document}
 
+%%%% Template files for a Thesis at the CPHT.
+%%%% Configure the content of the following frontmatter in Sources/Frontmatter/configuration.tex
 \frontmatter
-  \include{Sources/Title}
-  \include{Sources/Abstract}
+  \include{Sources/Frontmatter/Cover}
+  \include{Sources/Frontmatter/Title}
+  \include{Sources/Frontmatter/Abstract}
 
   \tableofcontents
 
 \mainmatter
 
+%%%%%%%%%%%%% If you want to Partition your thesis, use the \part command like;
   \part[A good part]{%
     A good part\\
     %
@@ -143,13 +243,14 @@
     \end{minipage}
   }
 
-  \include{Sources/Introduction}
+  \include{Sources/Chapters/template.tex}
 
 % This ensures that the subsequent sections are being included as root
 % items in the bookmark structure of your PDF reader.
 \bookmarksetup{startatroot}
 \backmatter
 
+  %%%%% Glossary %%%%%
   \begingroup
     \let\clearpage\relax
     \glsaddall
@@ -158,6 +259,8 @@
     \printglossary
   \endgroup
 
+  
+  %%% Bibliography %%%%
   \printindex
   \printbibliography
 
