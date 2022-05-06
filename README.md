@@ -1,3 +1,8 @@
+# CPhT thesis: A template for a PhD dissertation at the [Institut Polytechnique de Paris (IPP)](https://www.ip-paris.fr/en)
+### conducted at [The Centre for Theoretical Physics (CPhT)](https://www.cpht.polytechnique.fr/) of [Ecole Polytechnique](https://www.polytechnique.edu/)
+
+This template is written for a thesis at CPHT but can be readily adapted to a thesis from any other laboratory of Ecole Polytechnique or from any other member facility of IP Paris (ENSTA, ENSAE, Telecom Paris, Telecom Paris Sud) by exchange of Logo files
+
 # latex-mimosis: A minimal & modern template for your thesis
 
 This repository contains a minimal & modern LaTeX template for
