@@ -155,6 +155,8 @@
     BoldItalicFont={*-bolditalic},
     FontFace={db}{n}{Font=*demi-regular,Ligatures=CommonOff},
     FontFace={db}{it}{Font=*demi-oblique,Ligatures=CommonOff},
+    FontFace={sc}{n}{Font=*caps-regular,Ligatures=CommonOff},
+    FontFace={sc}{it}{Font=*caps-oblique,Ligatures=CommonOff},
   ]
 
   \setmonofont{lmmono}[
@@ -183,11 +185,11 @@
   % Set fonts for sections, chapters, and page headers
   % options are:
   % normal (main) Font
-  % font series: regular, bold, light,...
-  % font shape: normal, italic, oblique, slanted...
+  % font series: regular, bold, SmallCaps,...
+  % font shape: normal, italic, oblique,...
   % \setkomafont{sectioning}{\normalfont\fontseries{db}\fontshape{n}}
   \setkomafont{sectioning}{\normalfont\fontseries{db}\fontshape{it}}
-  \setkomafont{pagehead}{\normalfont\scshape}
+  \setkomafont{pagehead}{\normalfont\fontseries{sc}\fontshape{n}}
 
 \else
   % \usepackage[lf]{ebgaramond}
