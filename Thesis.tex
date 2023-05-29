@@ -17,18 +17,14 @@
 \usepackage{etoolbox}
 \usepackage{physics}
 
-
-% \ohead{\rightmark}  % section-names in the header
-% \ohead{\leftmark}   % chapter-names in the header
-
 % \usepackage{afterpage} %% for page specific geometry
 
-%
+
 % Make KOMA script happy?
 % fore more details see documentatio of KOMA Script options on margins and textarea at
 % mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguien.pdf
-% \KOMAoptions{DIV=12}
-% \KOMAoptions{BCOR=12mm}
+\KOMAoptions{DIV=12}
+\KOMAoptions{BCOR=12mm}
 
 
 \usepackage{multicol}
@@ -39,8 +35,8 @@
 
 \input{Sources/configuration.tex}
 
-
-
+% DELETE THIS FOR use in actual thesis. This just creates filler text
+\usepackage{lipsum}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 %% GEOMETRY
@@ -118,41 +114,87 @@
   % \setmainfont{EB Garamond}
   % \setmathfont{Garamond Math}
 
-  \setmathfont{STIXTwoMath-Regular}[
-  Extension={.otf},
-  Path=./fonts/STIX2/,
-  Scale=1]
 
-  \setmainfont{STIXTwoText}[
+  % STIX Math Font
+  % \setmathfont{STIXTwoMath-Regular}[
+  % Extension={.otf},
+  % Path=./fonts/STIX2/,
+  % Scale=1]
+
+  % \setmainfont{STIXTwoText}[
+  %   Extension={.otf},
+  %   Path=./fonts/STIX2/,
+  %   UprightFont={*-Regular},
+  %   BoldFont={*-Bold},
+  %   ItalicFont={*-Italic},
+  %   BoldItalicFont={*-BoldItalic}
+  % ]
+  % \setsansfont{texgyreheros}[
+  %   Extension={.otf},
+  %   Path=./fonts/Heros/,
+  %   UprightFont={*-regular},
+  %   BoldFont={*-bold},
+  %   ItalicFont={*-italic},
+  %   BoldItalicFont={*-bolditalic}
+  % ]
+
+
+  % Classical LaTeX Fonts "Latin Modern"
+  \setmathfont{latinmodern-math}[
     Extension={.otf},
-    Path=./fonts/STIX2/,
-    UprightFont={*-Regular},
-    BoldFont={*-Bold},
-    ItalicFont={*-Italic},
-    BoldItalicFont={*-BoldItalic}
+    Path=./fonts/Latin_Modern/,
+    Scale=1
   ]
 
-  \setmonofont[Scale=MatchLowercase]{Fira Mono}
-  
-
-  \setsansfont{texgyreheros}[
+  \setmainfont{lmroman}[
     Extension={.otf},
-    Path=./fonts/Heros/,
+    Path=./fonts/Latin_Modern/,
     UprightFont={*-regular},
     BoldFont={*-bold},
     ItalicFont={*-italic},
-    BoldItalicFont={*-bolditalic}
+    BoldItalicFont={*-bolditalic},
+    FontFace={db}{n}{Font=*demi-regular,Ligatures=CommonOff},
+    FontFace={db}{it}{Font=*demi-oblique,Ligatures=CommonOff},
+  ]
+
+  \setmonofont{lmmono}[
+    Scale=MatchLowercase,
+    Extension={.otf},
+    Path=./fonts/Latin_Modern/,
+    UprightFont={*-regular},
+    % BoldFont={*-bold},
+    ItalicFont={*-italic}
+  ]
+
+  \setsansfont{lmsans}[
+    Extension={.otf},
+    Path=./fonts/Latin_Modern/,
+    UprightFont={*-regular},
+    BoldFont={*-bold},
+    ItalicFont={*-oblique},
+    BoldItalicFont={*-boldoblique}
   ]
 
   % \setfontfamily\mycoverthesefont{Libre Franklin}
   % \setfontfamily\mycoverthesefont{IBM Plex Sans}
   % \setfontfamily\mycoverfont{STIXTwoText}
 
+
+  % Set fonts for sections, chapters, and page headers
+  % options are:
+  % normal (main) Font
+  % font series: regular, bold, light,...
+  % font shape: normal, italic, oblique, slanted...
+  % \setkomafont{sectioning}{\normalfont\fontseries{db}\fontshape{n}}
+  \setkomafont{sectioning}{\normalfont\fontseries{db}\fontshape{it}}
+  \setkomafont{pagehead}{\normalfont\scshape}
+
 \else
   % \usepackage[lf]{ebgaramond}
-  \usepackage{stix2}
+  % \usepackage{stix2}
+  \usepackage{lmodern}
   % \usepackage[garamondx,cmbraces]{newtxmath}
-  \usepackage[oldstyle,scale=0.7]{sourcecodepro}
+  % \usepackage[oldstyle,scale=0.7]{sourcecodepro}
   \singlespacing
   \usepackage{amsmath}
   \usepackage{amssymb}
@@ -164,7 +206,7 @@
 
 \newacronym[description={Singular value decomposition}]{SVD}{SVD}{singular value decomposition}
 \newacronym{SNF}{SNF}{Smith normal form}
-\newacronym[description={Topological data analysis}]   {TDA}{TDA}{topological data analysis}
+% \newacronym[description={Topological data analysis}]{TDA}{TDA}{topological data analysis}
 
 \newglossaryentry{LaTeX}{%
   name        = {\LaTeX},
@@ -217,6 +259,7 @@
   \include{Sources/Frontmatter/Title}
   \include{Sources/Frontmatter/Abstract}
 
+  \selectlanguage{english}
   \tableofcontents
 
 \mainmatter
@@ -259,9 +302,10 @@
     \printglossary
   \endgroup
 
-  
   %%% Bibliography %%%%
   \printindex
   \printbibliography
+
+  \include{Sources/Frontmatter/Backcover}
 
 \end{document}

@@ -1,0 +1,91 @@
+%%%%%%% !!!! The contents of this pages must fit in a single A4 page !!!!
+
+\newgeometry{
+left=16mm,
+top=27mm,
+right=16mm,
+bottom=27mm
+}
+
+
+\phantomsection{}
+\addcontentsline{toc}{chapter}{\protect\numberline{}Back cover}
+
+% 
+\thispagestyle{empty}
+
+\fontsize{10}{10}\selectfont
+\setlength{\columnseprule}{0pt}
+\setlength\columnsep{10pt}
+
+% \begin{textblock*}{61mm}(16mm,3mm)
+
+\vspace*{-16mm}
+
+\noindent\includegraphics[height=24mm]{graphics/frontmatter/ed-ip-paris.pdf}
+% \end{textblock*}
+
+
+
+
+\selectlanguage{french}
+%%%Titre de la thèse en français / Thesis title in french
+\begin{center}
+	\fcolorbox{black}{white}{\parbox{0.98\textwidth}{
+	\textbf{Titre:} \PhDTitleFR{} 
+	\medskip
+
+	%%%Mots clés en français, séprarés par des ;
+	\textbf{Mots clés:} \keywordsFR{} 
+	\vspace{-3mm}
+
+	%%% Résumé en français / abstract in french
+	\begin{multicols}{2}
+	\textbf{Résumé:}
+  %%%%%%% !!!! The contents of this pages must fit in a single A4 page !!!!
+    \lipsum[1-2]
+	\end{multicols}
+  \vspace{-3.5mm}
+	}}
+	\end{center}
+
+\vspace*{0mm}
+
+
+\selectlanguage{british}
+%%Titre de la thèse en anglais / Thesis title in english
+\begin{center}
+  \fcolorbox{black}{white}{\parbox{0.98\textwidth}{
+  \textbf{Title:} \PhDTitleEN{}
+  
+  \medskip
+  
+  %%% Keywords in english, separated by ;
+  \textbf{Keywords:}  \keywordsEN{}
+  \vspace{-3mm}
+  \begin{multicols}{2}
+  \textbf{Abstract:}
+    %%%%%%% !!!! The contents of this pages must fit in a single A4 page !!!!
+    \lipsum[1-2]
+  \end{multicols}
+  \vspace{-3.5mm}
+  }}
+\end{center}
+
+
+
+\hfill
+\vfill
+
+\noindent
+\begin{minipage}{0.5\linewidth}
+  \fontsize{11}{12}\selectfont
+  \noindent \textbf{Institut Polytechnique de Paris}\\
+  \noindent 91120 Palaiseau, France 
+\end{minipage}
+\hfill
+\begin{minipage}{22mm}
+\includegraphics[width=\linewidth]{graphics/frontmatter/ip-paris-petit.pdf}
+\end{minipage}
+
+\end{document}
